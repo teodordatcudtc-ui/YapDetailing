@@ -17,8 +17,9 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
       setIsSticky(window.scrollY > 100)
+      // Nu închide meniul la scroll pe mobil - meniul rămâne deschis
     }
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 

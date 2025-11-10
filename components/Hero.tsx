@@ -55,20 +55,16 @@ export default function Hero() {
           <p className="hero__description">
             Protecție ceramică, PPF și detailing interior premium în Cățelu.
           </p>
-          <div className="hero__stats">
-            <div className="hero__stat">
-              <span className="hero__stat-number">500+</span>
-              <span className="hero__stat-label">Mașini transformate</span>
-            </div>
-            <div className="hero__stat">
-              <span className="hero__stat-number">10+</span>
-              <span className="hero__stat-label">Ani experiență</span>
-            </div>
-            <div className="hero__stat">
-              <span className="hero__stat-number">100%</span>
-              <span className="hero__stat-label">Satisfacție</span>
-            </div>
-          </div>
+              <div className="hero__stats">
+                <div className="hero__stat">
+                  <span className="hero__stat-number">500+</span>
+                  <span className="hero__stat-label">Mașini transformate</span>
+                </div>
+                <div className="hero__stat">
+                  <span className="hero__stat-number">10+</span>
+                  <span className="hero__stat-label">Ani experiență</span>
+                </div>
+              </div>
           <div className="hero__cta-group">
             <Link href="/contact" className="hero__cta hero__cta--primary">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
