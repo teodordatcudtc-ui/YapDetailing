@@ -191,7 +191,7 @@
 .hero__description {
   font-size: clamp(1rem, 2vw, 1.25rem);
   line-height: 1.6;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
   color: rgba(255, 255, 255, 0.9);
   max-width: 600px;
   margin-left: auto;
@@ -202,7 +202,7 @@
   display: flex;
   justify-content: center;
   gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
   flex-wrap: wrap;
 }
 
@@ -234,7 +234,7 @@
 
 .hero__cta-group {
   display: flex;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -284,8 +284,9 @@
 
 @media (max-width: 767px) {
   .hero {
-    min-height: 90vh;
+    min-height: 55vh;
     margin-top: 110px;
+    padding-top: 1rem;
   }
 
   .hero__stats {
