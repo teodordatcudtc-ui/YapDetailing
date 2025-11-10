@@ -45,10 +45,14 @@ export default function BeforeAfterSlider({ beforeImage, afterImage, alt = 'Befo
 
   useEffect(() => {
     if (isDragging) {
-      window.addEventListener('mousemove', handleMouseMove)
+      const handleMouseMoveEvent = (e: MouseEvent) => {
+        handleMove(e.clientX)
+      }
+      
+      window.addEventListener('mousemove', handleMouseMoveEvent)
       window.addEventListener('mouseup', handleMouseUp)
       return () => {
-        window.removeEventListener('mousemove', handleMouseMove)
+        window.removeEventListener('mousemove', handleMouseMoveEvent)
         window.removeEventListener('mouseup', handleMouseUp)
       }
     }

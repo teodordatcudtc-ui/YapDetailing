@@ -101,7 +101,7 @@ export default function TestimonialCarousel() {
                     </svg>
                   ))}
                 </div>
-                <p className="testimonial-card__text">"{testimonial.text}"</p>
+                <p className="testimonial-card__text">&ldquo;{testimonial.text}&rdquo;</p>
                 <div className="testimonial-card__author">
                   <strong>{testimonial.name}</strong>
                   {testimonial.service && (
