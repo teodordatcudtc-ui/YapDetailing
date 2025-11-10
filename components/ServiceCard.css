@@ -61,7 +61,9 @@
 .service-card__placeholder-icon {
   position: relative;
   z-index: 1;
-  color: rgba(201, 166, 107, 0.4);
+  color: rgba(201, 166, 107, 0.5);
+  width: 64px;
+  height: 64px;
 }
 
 .service-card:hover .service-card__image {

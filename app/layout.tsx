@@ -86,7 +86,7 @@ export default function RootLayout({
         <link rel="canonical" href="https://yap-detailing.ro" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
         <meta name="theme-color" content="#0B1A2B" />
         <script
           type="application/ld+json"

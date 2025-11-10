@@ -18,7 +18,7 @@ const services = [
     title: 'Ceramic Coating',
     description: 'Protecție durabilă de 9H pentru vopsea, cu efect hidrofob și ușor de întreținut.',
     fullDescription: 'Ceramic Coating este cea mai avansată tehnologie de protecție pentru vopsea. Oferă protecție de 9H (mai dură decât vopseaua originală), efect hidrofob puternic și ușurință de întreținere. Acoperirea ceramică creează un strat transparent care protejează împotriva UV, contaminanților, apă și zgârieturilor minore.',
-    image: '/images/services/ceramic-coating.jpg',
+    image: 'placeholder',
     features: [
       'Protecție 9H durabilă',
       'Efect hidrofob puternic',
@@ -35,7 +35,7 @@ const services = [
     title: 'PPF (Paint Protection Film)',
     description: 'Film transparent de protecție care previn zgârieturile și impacturile minore.',
     fullDescription: 'Paint Protection Film (PPF) este un film transparent de înaltă calitate aplicat pe zonele vulnerabile ale mașinii. Filmul oferă protecție maximă împotriva zgârieturilor, ciobiturilor de pietriș, impacturilor minore și are proprietăți auto-healing pentru zgârieturile de suprafață.',
-    image: '/images/services/ppf.jpg',
+    image: 'placeholder',
     features: [
       'Protecție maximă împotriva zgârieturilor',
       'Invisible - păstrează aspectul original',
@@ -52,7 +52,7 @@ const services = [
     title: 'Detailing Interior',
     description: 'Curățare profundă și restaurare completă a interiorului mașinii tale.',
     fullDescription: 'Serviciul nostru de detailing interior include curățare profundă a tuturor suprafețelor, tratament pentru scaune de piele, curățare covorașe, dezinfecție UV, protecție pentru scaune și restaurare completă a aspectului interiorului.',
-    image: '/images/services/interior.jpg',
+    image: 'placeholder',
     features: [
       'Curățare profundă completă',
       'Tratament și protecție scaune piele',
@@ -69,7 +69,7 @@ const services = [
     title: 'Polish & Corecție Vopsea',
     description: 'Eliminarea zgârieturilor și restaurarea strălucirii vopselei originale.',
     fullDescription: 'Serviciul de polish și corecție vopsea elimină zgârieturile fine, swirl marks, holograme și restabilește strălucirea și adâncimea vopselei originale. Folosim produse premium și tehnici profesionale pentru rezultate perfecte.',
-    image: '/images/services/polish.jpg',
+    image: 'placeholder',
     features: [
       'Eliminare zgârieturile fine',
       'Corecție swirl marks',
@@ -86,7 +86,7 @@ const services = [
     title: 'Detailing Complet',
     description: 'Pachet complet care include toate serviciile pentru o transformare totală.',
     fullDescription: 'Pachetul complet de detailing include toate serviciile: curățare exterior și interior, polish, corecție vopsea, protecție ceramică sau PPF, și multe altele. Ideal pentru o transformare completă a mașinii tale.',
-    image: '/images/services/complete.jpg',
+    image: 'placeholder',
     features: [
       'Toate serviciile incluse',
       'Curățare completă exterior',
@@ -119,7 +119,7 @@ export default function ServiciiPage() {
             {services.map((service, index) => (
             <div key={service.id} className={`serviciu-card ${index % 2 === 0 ? 'serviciu-card--image-left' : 'serviciu-card--image-right'}`}>
               <div className="serviciu-card__image-wrapper">
-                {service.image && !service.image.includes('placeholder') ? (
+                {service.image && service.image !== 'placeholder' && !service.image.includes('placeholder') ? (
                   <div
                     className="serviciu-card__image"
                     style={{ backgroundImage: `url(${service.image})` }}

@@ -39,7 +39,7 @@ export default function HomePage() {
             <ServiceCard
               title="Ceramic Coating"
               description="Protecție durabilă de 9H pentru vopsea, cu efect hidrofob și ușor de întreținut."
-              image="/images/services/ceramic-coating.jpg"
+              image="placeholder"
               href="/servicii/ceramic-coating"
               features={[
                 'Protecție 9H durabilă',
@@ -51,7 +51,7 @@ export default function HomePage() {
             <ServiceCard
               title="PPF (Paint Protection Film)"
               description="Film transparent de protecție care previn zgârieturile și impacturile minore."
-              image="/images/services/ppf.jpg"
+              image="placeholder"
               href="/servicii/ppf"
               features={[
                 'Protecție maximă',
@@ -63,7 +63,7 @@ export default function HomePage() {
             <ServiceCard
               title="Detailing Interior"
               description="Curățare profundă și restaurare completă a interiorului mașinii tale."
-              image="/images/services/interior.jpg"
+              image="placeholder"
               href="/servicii/detailing-interior"
               features={[
                 'Curățare profundă',

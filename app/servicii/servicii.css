@@ -104,9 +104,9 @@
 .serviciu-card__placeholder-icon {
   position: relative;
   z-index: 1;
-  width: 48px;
-  height: 48px;
-  color: rgba(201, 166, 107, 0.4);
+  width: 64px;
+  height: 64px;
+  color: rgba(201, 166, 107, 0.5);
 }
 
 .serviciu-card:hover .serviciu-card__image {
