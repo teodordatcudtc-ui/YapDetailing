@@ -138,7 +138,6 @@ export default function ServiciiPage() {
               </div>
                 <div className="serviciu-card__content">
                   <h2 className="serviciu-card__title">{service.title}</h2>
-                  <p className="serviciu-card__description">{service.fullDescription}</p>
                   
                   <div className="serviciu-card__details">
                     <div className="serviciu-card__detail">

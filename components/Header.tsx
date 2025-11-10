@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTopbarVisibility } from './TopBar'
@@ -12,27 +12,15 @@ export default function Header() {
   const [isSticky, setIsSticky] = useState(false)
   const isTopbarVisible = useTopbarVisibility()
   const pathname = usePathname()
-  const headerRef = useRef<HTMLElement>(null)
-  const navRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
       setIsSticky(window.scrollY > 100)
-      // Nu închide meniul la scroll pe mobil - meniul rămâne deschis
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  useEffect(() => {
-    // Ajustează poziția meniului când header-ul se mută
-    if (navRef.current && headerRef.current && isMenuOpen) {
-      const headerRect = headerRef.current.getBoundingClientRect()
-      const headerHeight = headerRect.height
-      navRef.current.style.top = `${headerRect.bottom}px`
-    }
-  }, [isMenuOpen, isTopbarVisible, isSticky])
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -51,14 +39,24 @@ export default function Header() {
   ]
 
   return (
-    <header ref={headerRef} className={`header ${isScrolled ? 'header--scrolled' : ''} ${isSticky ? 'header--sticky' : ''} ${!isTopbarVisible ? 'header--topbar-hidden' : ''}`}>
+    <header className={`header ${isScrolled ? 'header--scrolled' : ''} ${isSticky ? 'header--sticky' : ''} ${!isTopbarVisible ? 'header--topbar-hidden' : ''}`}>
       <div className="container">
         <div className="header__content">
           <Link href="/" className="header__logo" onClick={closeMenu}>
             <span className="header__logo-text">Yap Detailing</span>
           </Link>
           
-          <nav ref={navRef} className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`} aria-label="Navigare principală">
+          <nav className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`} aria-label="Navigare principală">
+            <button
+              className="header__nav-close"
+              onClick={closeMenu}
+              aria-label="Închide meniul"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
             <ul className="header__nav-list">
               {navItems.map((item) => (
                 <li key={item.href}>
@@ -100,4 +98,3 @@ export default function Header() {
     </header>
   )
 }
-
