@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTopbarVisibility } from './TopBar'
@@ -12,6 +12,8 @@ export default function Header() {
   const [isSticky, setIsSticky] = useState(false)
   const isTopbarVisible = useTopbarVisibility()
   const pathname = usePathname()
+  const headerRef = useRef<HTMLElement>(null)
+  const navRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +24,15 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    // Ajustează poziția meniului când header-ul se mută
+    if (navRef.current && headerRef.current && isMenuOpen) {
+      const headerRect = headerRef.current.getBoundingClientRect()
+      const headerHeight = headerRect.height
+      navRef.current.style.top = `${headerRect.bottom}px`
+    }
+  }, [isMenuOpen, isTopbarVisible, isSticky])
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -40,14 +51,14 @@ export default function Header() {
   ]
 
   return (
-    <header className={`header ${isScrolled ? 'header--scrolled' : ''} ${isSticky ? 'header--sticky' : ''} ${!isTopbarVisible ? 'header--topbar-hidden' : ''}`}>
+    <header ref={headerRef} className={`header ${isScrolled ? 'header--scrolled' : ''} ${isSticky ? 'header--sticky' : ''} ${!isTopbarVisible ? 'header--topbar-hidden' : ''}`}>
       <div className="container">
         <div className="header__content">
           <Link href="/" className="header__logo" onClick={closeMenu}>
             <span className="header__logo-text">Yap Detailing</span>
           </Link>
           
-          <nav className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`} aria-label="Navigare principală">
+          <nav ref={navRef} className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`} aria-label="Navigare principală">
             <ul className="header__nav-list">
               {navItems.map((item) => (
                 <li key={item.href}>
