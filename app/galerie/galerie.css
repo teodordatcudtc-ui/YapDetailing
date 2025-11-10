@@ -1,0 +1,26 @@
+.galerie-hero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, rgba(11, 26, 43, 0.95) 100%);
+  color: var(--color-text-light);
+  text-align: center;
+  padding-top: calc(70px + var(--spacing-xl));
+  padding-bottom: var(--spacing-xl);
+}
+
+.galerie-hero__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-md);
+}
+
+.galerie-hero__description {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.galerie-content {
+  background-color: var(--color-text-light);
+}
+

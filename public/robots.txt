@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yap-detailing.ro/sitemap.xml
+

@@ -1,0 +1,317 @@
+.servicii-hero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, rgba(11, 26, 43, 0.95) 100%);
+  color: var(--color-text-light);
+  text-align: center;
+  padding-top: calc(70px + var(--spacing-xl));
+  padding-bottom: var(--spacing-xl);
+}
+
+.servicii-hero__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-md);
+}
+
+.servicii-hero__description {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.servicii-list {
+  background-color: var(--color-text-light);
+}
+
+.servicii-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.serviciu-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--spacing-lg);
+  background-color: var(--color-secondary);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.serviciu-card--image-right {
+  grid-template-columns: 2fr 1fr;
+}
+
+.serviciu-card--image-right .serviciu-card__image-wrapper {
+  order: 2;
+}
+
+.serviciu-card--image-right .serviciu-card__content {
+  order: 1;
+}
+
+.serviciu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.serviciu-card__image-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  max-height: 250px;
+  overflow: hidden;
+}
+
+.serviciu-card__image {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  max-height: 250px;
+  background-size: cover;
+  background-position: center;
+  transition: transform var(--transition-slow);
+}
+
+.serviciu-card__image--placeholder {
+  background: linear-gradient(135deg, #0a1628 0%, #1a2a3a 50%, #0f1e2e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.serviciu-card__placeholder-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(45deg, rgba(201, 166, 107, 0.05) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(201, 166, 107, 0.05) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(201, 166, 107, 0.05) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(201, 166, 107, 0.05) 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  opacity: 0.3;
+}
+
+.serviciu-card__placeholder-icon {
+  position: relative;
+  z-index: 1;
+  width: 48px;
+  height: 48px;
+  color: rgba(201, 166, 107, 0.4);
+}
+
+.serviciu-card:hover .serviciu-card__image {
+  transform: scale(1.05);
+}
+
+.serviciu-card__content {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.serviciu-card__title {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.serviciu-card__description {
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.serviciu-card__details {
+  display: flex;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) 0;
+  border-top: 1px solid rgba(31, 41, 51, 0.1);
+  border-bottom: 1px solid rgba(31, 41, 51, 0.1);
+}
+
+.serviciu-card__detail {
+  color: var(--color-text-dark);
+}
+
+.serviciu-card__detail strong {
+  color: var(--color-primary);
+  margin-right: 0.5rem;
+}
+
+.serviciu-card__features {
+  margin-top: var(--spacing-sm);
+}
+
+.serviciu-card__features-title {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.serviciu-card__features-list {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+
+.serviciu-card__features-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--color-text-dark);
+}
+
+.serviciu-card__features-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.serviciu-card__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all var(--transition-base);
+  letter-spacing: 0.02em;
+  margin-top: var(--spacing-sm);
+  text-align: center;
+}
+
+.serviciu-card__cta:hover {
+  background-color: #D4B57A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(201, 166, 107, 0.4);
+}
+
+.servicii-cta {
+  background: linear-gradient(135deg, var(--color-primary) 0%, rgba(11, 26, 43, 0.95) 100%);
+  color: var(--color-text-light);
+  text-align: center;
+}
+
+.servicii-cta__content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.servicii-cta__title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-sm);
+}
+
+.servicii-cta__description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.6;
+}
+
+.servicii-cta__buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.serviciu-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  transition: all var(--transition-base);
+  letter-spacing: 0.02em;
+  min-width: 200px;
+}
+
+.serviciu-cta-button--primary {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+.serviciu-cta-button--primary:hover {
+  background-color: #D4B57A;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(201, 166, 107, 0.4);
+}
+
+.serviciu-cta-button--secondary {
+  background-color: transparent;
+  color: var(--color-text-light);
+  border: 2px solid var(--color-text-light);
+}
+
+.serviciu-cta-button--secondary:hover {
+  background-color: var(--color-text-light);
+  color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 1023px) {
+  .serviciu-card {
+    grid-template-columns: 1fr;
+  }
+
+  .serviciu-card--image-right {
+    grid-template-columns: 1fr;
+  }
+
+  .serviciu-card--image-right .serviciu-card__image-wrapper {
+    order: 1;
+  }
+
+  .serviciu-card--image-right .serviciu-card__content {
+    order: 2;
+  }
+
+  .serviciu-card__image-wrapper {
+    min-height: 250px;
+  }
+
+  .serviciu-card__image {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 767px) {
+  .servicii-hero {
+    padding-top: calc(70px + var(--spacing-lg));
+    padding-bottom: var(--spacing-lg);
+  }
+
+  .serviciu-card__features-list {
+    grid-template-columns: 1fr;
+  }
+
+  .servicii-cta__buttons {
+    flex-direction: column;
+  }
+
+  .serviciu-cta-button {
+    width: 100%;
+  }
+}
+

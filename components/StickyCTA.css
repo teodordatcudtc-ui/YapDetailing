@@ -1,0 +1,100 @@
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm);
+  background: linear-gradient(135deg, var(--color-primary) 0%, rgba(11, 26, 43, 0.95) 100%);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  transform: translateY(0);
+  transition: transform var(--transition-base);
+}
+
+.sticky-cta__button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  padding: 1rem var(--spacing-md);
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: all var(--transition-base);
+  letter-spacing: 0.02em;
+}
+
+.sticky-cta__button:hover {
+  background-color: #D4B57A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(201, 166, 107, 0.4);
+}
+
+.sticky-cta__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.sticky-cta__phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background-color: rgba(201, 166, 107, 0.2);
+  border: 2px solid var(--color-accent);
+  border-radius: 8px;
+  color: var(--color-accent);
+  transition: all var(--transition-base);
+}
+
+.sticky-cta__phone:hover {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  transform: scale(1.05);
+}
+
+.sticky-cta__phone-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.sticky-cta__badge {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 20px;
+  animation: slideUp 0.5s ease-out;
+  box-shadow: 0 4px 12px rgba(201, 166, 107, 0.4);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .sticky-cta {
+    display: none;
+  }
+}
+

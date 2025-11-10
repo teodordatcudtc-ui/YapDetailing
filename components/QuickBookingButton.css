@@ -1,0 +1,136 @@
+.quick-booking-wrapper {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 998;
+}
+
+.quick-booking {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #D4B57A 100%);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 50px;
+  box-shadow: 0 8px 24px rgba(201, 166, 107, 0.4);
+  transition: all var(--transition-base);
+  letter-spacing: 0.02em;
+  animation: pulse 2s ease-in-out infinite;
+  border: none;
+  cursor: pointer;
+}
+
+.quick-booking:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 32px rgba(201, 166, 107, 0.5);
+}
+
+.quick-booking__icon {
+  flex-shrink: 0;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.quick-booking__text {
+  white-space: nowrap;
+}
+
+.quick-booking__menu {
+  position: absolute;
+  bottom: calc(100% + 1rem);
+  right: 0;
+  background-color: var(--color-text-light);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+  min-width: 220px;
+  animation: slideUp 0.3s ease-out;
+  border: 1px solid rgba(201, 166, 107, 0.2);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quick-booking__menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.quick-booking__menu-item:hover {
+  background-color: var(--color-secondary);
+  transform: translateX(-4px);
+}
+
+.quick-booking__menu-item svg {
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+
+.quick-booking__menu-item--whatsapp svg {
+  color: #25D366;
+}
+
+.quick-booking__menu-item--whatsapp:hover {
+  background-color: rgba(37, 211, 102, 0.1);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(201, 166, 107, 0.4);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(201, 166, 107, 0.6);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 767px) {
+  .quick-booking-wrapper {
+    bottom: 5rem;
+    right: 1rem;
+  }
+
+  .quick-booking {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .quick-booking__text {
+    display: none;
+  }
+
+  .quick-booking__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .quick-booking__menu {
+    min-width: 180px;
+    right: 0;
+  }
+}

@@ -1,0 +1,45 @@
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.page-transition__mask {
+  width: 100%;
+  height: 100%;
+}
+
+.page-transition__path {
+  fill: var(--color-primary);
+  animation: wipeDown 0.45s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes wipeDown {
+  0% {
+    d: path('M0,0 L0,0 L1,0 L1,0 Z');
+  }
+  100% {
+    d: path('M0,0 L0,1 L1,1 L1,0 Z');
+  }
+}
+
+.page-transition__content {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition__path {
+    animation: none;
+  }
+  
+  .page-transition__content {
+    transition: none;
+  }
+}
+
